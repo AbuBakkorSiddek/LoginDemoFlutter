@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'package:loginpages/singup.dart';
+import 'singin.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -56,6 +57,7 @@ class _WelcomeState extends State<Welcome> {
                     backgroundColor: MaterialStateProperty.all(Colors.blue),),
 
                   onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SingUp()));
                   },
                   child: Padding(
                       padding: EdgeInsets.symmetric(vertical: 10,horizontal: 130),

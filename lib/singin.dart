@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:loginpages/singup.dart';
 import 'dashboard.dart';
 
 void main(){
   runApp(MaterialApp(
-    theme: ThemeData().copyWith(
-      backgroundColor: Color(0xFF2F3FA),
-    ),
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData.dark(),
     home: LoginPage(),
   ));
 }
@@ -23,11 +22,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.amberAccent,
         body:ListView(
           children: [
-            Column(
-                children: [
                   Container(
                     width: double.infinity,
                     height: 150,
@@ -60,12 +56,12 @@ class _LoginPageState extends State<LoginPage> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20)
                             ),
-                            prefixIcon: Icon(Icons.people),
+                            prefixIcon: Icon(Icons.email_outlined),
                           ),
                         ),
 
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
 
                         TextField(
@@ -75,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20.0)
                               ),
-                              prefixIcon: Icon(Icons.lock)
+                              prefixIcon: Icon(Icons.lock_outlined),
                           ),
                         ),
 
@@ -109,9 +105,11 @@ class _LoginPageState extends State<LoginPage> {
                         ),
 
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SingUp()));
+                          },
 
-                          child:Text('Don not have an account?Sing Up',
+                          child:Text('Do not have an account?Sing Up',
                               style: TextStyle(fontSize: 20.0,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,color: Colors.white)),
@@ -164,8 +162,6 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   )
 
-                ]
-            ),
           ],
         )
       ),
